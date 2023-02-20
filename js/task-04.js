@@ -1,15 +1,19 @@
 const decrBtn = document.querySelector('button[data-action="decrement"]');
 const incrBtn = document.querySelector('button[data-action="increment"]');
-const counterValue = document.querySelector("#value");
+const value = document.querySelector("#value");
 
 decrBtn.addEventListener("click", decrBtnClickHandler);
 incrBtn.addEventListener("click", incrBtnClickHandler);
 
+let counterValue = 0;
+
 function decrBtnClickHandler() {
-  const value = Number(counterValue.textContent);
-  counterValue.textContent = value - 1;
+  counterValue = counterValue - 1;
+  value.textContent = counterValue;
+  return counterValue;
 }
 function incrBtnClickHandler() {
-  const value = Number(counterValue.textContent);
-  counterValue.textContent = value + 1;
+  counterValue = counterValue + 1;
+  value.textContent = counterValue + 1;
+  return counterValue;
 }
